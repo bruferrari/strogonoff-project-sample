@@ -32,15 +32,20 @@ class MealsTableViewController: UITableViewController, AddAMealDelegate {
     func showDetails(recognizer: UILongPressGestureRecognizer) {
         if recognizer.state == UIGestureRecognizerState.Began {
             let cell = recognizer.view as! UITableViewCell
-            let indexPath = tableView.indexPathForCell(cell)
-            if indexPath == nil {
-                return
+            let meal = getMealOnLongPress(cell)
+            if meal != nil {
+                print(meal!.name, meal!.hapiness)
             }
-            
-            let row = indexPath!.row
-            let meal = meals[row]
-            print(meal.name, meal.hapiness)
         }
+    }
+    
+    func getMealOnLongPress(cell:UITableViewCell) -> Meal? {
+        let indexPath = tableView.indexPathForCell(cell)
+        if indexPath == nil {
+            return nil
+        }
+        let row = indexPath!.row
+        return meals[row]
     }
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
