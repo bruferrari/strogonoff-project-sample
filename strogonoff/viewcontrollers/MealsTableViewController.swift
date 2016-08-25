@@ -32,11 +32,23 @@ class MealsTableViewController: UITableViewController, AddAMealDelegate {
     func showDetails(recognizer: UILongPressGestureRecognizer) {
         if recognizer.state == UIGestureRecognizerState.Began {
             let cell = recognizer.view as! UITableViewCell
-            let meal = getMealOnLongPress(cell)
-            if meal != nil {
-                print(meal!.name, meal!.hapiness)
+            if let index = tableView.indexPathForCell(cell)?.row {
+                
+                let meal = getMealOnLongPress(cell)
+                
+                if let m = meal {
+                    showDetailsAlert(m, index: index)
+                }
             }
         }
+    }
+    
+    func showDetailsAlert(meal: Meal, index: Int) {
+        RemoveMealController(controller: self).show(meal, handler: {
+            action in
+            self.meals.removeAtIndex(index)
+            self.tableView.reloadData()
+        })
     }
     
     func getMealOnLongPress(cell:UITableViewCell) -> Meal? {

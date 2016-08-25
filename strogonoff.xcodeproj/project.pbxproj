@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		1506C26A1D6595F900E8F87B /* NewItemViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1506C2681D6595F900E8F87B /* NewItemViewController.xib */; };
 		1506C26C1D65963200E8F87B /* NewItemViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1506C26B1D65963200E8F87B /* NewItemViewController.swift */; };
+		153ED6FD1D6D080300C4C0CB /* Alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 153ED6FC1D6D080300C4C0CB /* Alert.swift */; };
 		156F7C111D62E2C800E15C76 /* Meal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 156F7C101D62E2C800E15C76 /* Meal.swift */; };
 		156F7C131D62E39600E15C76 /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = 156F7C121D62E39600E15C76 /* Item.swift */; };
 		156F7C151D62E4F600E15C76 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 156F7C141D62E4F600E15C76 /* ViewController.swift */; };
@@ -19,6 +20,7 @@
 		15C616D51D61A4A5008E8778 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 15C616D31D61A4A5008E8778 /* LaunchScreen.storyboard */; };
 		15C616E01D61A4A5008E8778 /* strogonoffTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15C616DF1D61A4A5008E8778 /* strogonoffTests.swift */; };
 		15C616EB1D61A4A5008E8778 /* strogonoffUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15C616EA1D61A4A5008E8778 /* strogonoffUITests.swift */; };
+		15DDEBB91D6EB17200B91C6C /* RemoveMealController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15DDEBB81D6EB17200B91C6C /* RemoveMealController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -41,6 +43,7 @@
 /* Begin PBXFileReference section */
 		1506C2681D6595F900E8F87B /* NewItemViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NewItemViewController.xib; sourceTree = "<group>"; };
 		1506C26B1D65963200E8F87B /* NewItemViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewItemViewController.swift; sourceTree = "<group>"; };
+		153ED6FC1D6D080300C4C0CB /* Alert.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Alert.swift; sourceTree = "<group>"; };
 		156F7C0C1D62371700E15C76 /* MyPlayground.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = MyPlayground.playground; sourceTree = "<group>"; };
 		156F7C101D62E2C800E15C76 /* Meal.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Meal.swift; sourceTree = "<group>"; };
 		156F7C121D62E39600E15C76 /* Item.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
@@ -58,6 +61,7 @@
 		15C616E61D61A4A5008E8778 /* strogonoffUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = strogonoffUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		15C616EA1D61A4A5008E8778 /* strogonoffUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = strogonoffUITests.swift; sourceTree = "<group>"; };
 		15C616EC1D61A4A5008E8778 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		15DDEBB81D6EB17200B91C6C /* RemoveMealController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RemoveMealController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -109,6 +113,8 @@
 			children = (
 				15C616CE1D61A4A5008E8778 /* Main.storyboard */,
 				1506C2681D6595F900E8F87B /* NewItemViewController.xib */,
+				153ED6FC1D6D080300C4C0CB /* Alert.swift */,
+				15DDEBB81D6EB17200B91C6C /* RemoveMealController.swift */,
 			);
 			path = views;
 			sourceTree = "<group>";
@@ -304,6 +310,8 @@
 				156F7C111D62E2C800E15C76 /* Meal.swift in Sources */,
 				156F7C151D62E4F600E15C76 /* ViewController.swift in Sources */,
 				15C616CB1D61A4A5008E8778 /* AppDelegate.swift in Sources */,
+				15DDEBB91D6EB17200B91C6C /* RemoveMealController.swift in Sources */,
+				153ED6FD1D6D080300C4C0CB /* Alert.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
