@@ -8,14 +8,26 @@
 
 import Foundation
 
-class Meal {
+class Meal : NSObject, NSCoding{
     let name:String
-    let hapiness:Int
+    let hapiness:Int32
     var items = Array<Item>()
     
-    init(name:String, hapiness:Int) {
+    init(name:String, hapiness:Int32) {
         self.name = name
         self.hapiness = hapiness
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        self.name = aDecoder.decodeObjectForKey("name") as! String
+        self.hapiness = aDecoder.decodeIntForKey("hapiness")
+        self.items = aDecoder.decodeObjectForKey("items") as! Array
+    }
+    
+    func encodeWithCoder(aCoder: NSCoder) {
+        aCoder.encodeObject(name, forKey: "name")
+        aCoder.encodeInt(hapiness, forKey: "hapiness")
+        aCoder.encodeObject(items, forKey: "items")
     }
     
     func allCalories() -> Double {

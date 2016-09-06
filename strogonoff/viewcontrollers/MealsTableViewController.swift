@@ -10,12 +10,24 @@ import UIKit
 
 class MealsTableViewController: UITableViewController, AddAMealDelegate {
 
-    var meals = [Meal(name: "eggplant brownie", hapiness: 3),
-                Meal(name: "zucchini muffin", hapiness: 5)]
+    var meals = Array<Meal>()
+    var fileHandler = FileHandler()
     
     func add(meal:Meal) {
         meals.append(meal)
+        let dir = Utils.getActiveUserPath()
+        let archive = "\(dir)/strognoff-meals"
+        
+        fileHandler.write(meals, filePath: archive)
+        
         tableView.reloadData()
+    }
+    
+    override func viewDidLoad() {
+        let dir = Utils.getActiveUserPath()
+        let archive = "\(dir)/strognoff-meals"
+
+        meals = fileHandler.read(archive) as! Array
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {

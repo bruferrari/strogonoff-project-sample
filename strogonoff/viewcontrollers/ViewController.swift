@@ -19,12 +19,10 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     @IBOutlet var tableView:UITableView?
     var delegate:AddAMealDelegate?
     
-    var items = [Item(name: "eggplant brownie", calories: 10),
-                 Item(name: "Zuchinni Muffin", calories: 10),
-                 Item(name: "Cookie", calories: 10),
-                 Item(name: "Coconut Oil", calories: 500),
-                 Item(name: "Chocolate frosting", calories: 1000),
-                 Item(name: "Chocolate chip", calories: 1000)]
+    var items = Array<Item>()
+    let fileHandler = FileHandler()
+    
+    let archive = "\(Utils.getActiveUserPath())/strogonoff-items"
     
     override func viewDidLoad() {
         let newItemButton = UIBarButtonItem(title: "New Item",
@@ -32,10 +30,14 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
                                             target: self,
                                             action: #selector(ViewController.showNewItem))
         navigationItem.rightBarButtonItem = newItemButton
+        
+        items = fileHandler.read(archive) as! Array
     }
     
     func addNew(item:Item) {
         items.append(item)
+
+        fileHandler.write(items, filePath: archive)
         if let tbView = tableView {
             tbView.reloadData()
         } else {
@@ -92,7 +94,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         }
         
         let name = nameField!.text
-        let hapiness = Int(hapinessField!.text!)
+        let hapiness = Int32(hapinessField!.text!)
         
         if hapiness == nil {
             return nil
