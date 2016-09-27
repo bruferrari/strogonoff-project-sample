@@ -16,6 +16,7 @@
 		156F7C131D62E39600E15C76 /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = 156F7C121D62E39600E15C76 /* Item.swift */; };
 		156F7C151D62E4F600E15C76 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 156F7C141D62E4F600E15C76 /* ViewController.swift */; };
 		15707E2E1D6399440060EA80 /* MealsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15707E2D1D6399440060EA80 /* MealsTableViewController.swift */; };
+		157B57461D9A26ED005E88D1 /* Dao.swift in Sources */ = {isa = PBXBuildFile; fileRef = 157B57451D9A26ED005E88D1 /* Dao.swift */; };
 		15C616CB1D61A4A5008E8778 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15C616CA1D61A4A5008E8778 /* AppDelegate.swift */; };
 		15C616D01D61A4A5008E8778 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 15C616CE1D61A4A5008E8778 /* Main.storyboard */; };
 		15C616D21D61A4A5008E8778 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 15C616D11D61A4A5008E8778 /* Assets.xcassets */; };
@@ -53,6 +54,7 @@
 		156F7C121D62E39600E15C76 /* Item.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
 		156F7C141D62E4F600E15C76 /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		15707E2D1D6399440060EA80 /* MealsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MealsTableViewController.swift; sourceTree = "<group>"; };
+		157B57451D9A26ED005E88D1 /* Dao.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Dao.swift; sourceTree = "<group>"; };
 		15C616C71D61A4A5008E8778 /* strogonoff.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = strogonoff.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		15C616CA1D61A4A5008E8778 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		15C616CF1D61A4A5008E8778 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -98,6 +100,7 @@
 			children = (
 				150094921D7E99E700B10D0D /* FileHandler.swift */,
 				1500948E1D7E947400B10D0D /* Utils.swift */,
+				157B57451D9A26ED005E88D1 /* Dao.swift */,
 			);
 			path = util;
 			sourceTree = "<group>";
@@ -254,13 +257,16 @@
 				TargetAttributes = {
 					15C616C61D61A4A5008E8778 = {
 						CreatedOnToolsVersion = 7.3.1;
+						LastSwiftMigration = 0800;
 					};
 					15C616DA1D61A4A5008E8778 = {
 						CreatedOnToolsVersion = 7.3.1;
+						LastSwiftMigration = 0800;
 						TestTargetID = 15C616C61D61A4A5008E8778;
 					};
 					15C616E51D61A4A5008E8778 = {
 						CreatedOnToolsVersion = 7.3.1;
+						LastSwiftMigration = 0800;
 						TestTargetID = 15C616C61D61A4A5008E8778;
 					};
 				};
@@ -320,6 +326,7 @@
 			files = (
 				15707E2E1D6399440060EA80 /* MealsTableViewController.swift in Sources */,
 				156F7C131D62E39600E15C76 /* Item.swift in Sources */,
+				157B57461D9A26ED005E88D1 /* Dao.swift in Sources */,
 				1506C26C1D65963200E8F87B /* NewItemViewController.swift in Sources */,
 				156F7C111D62E2C800E15C76 /* Meal.swift in Sources */,
 				1500948F1D7E947400B10D0D /* Utils.swift in Sources */,
@@ -474,6 +481,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.bferrari.strogonoff;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 2.3;
 			};
 			name = Debug;
 		};
@@ -485,6 +493,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.bferrari.strogonoff;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 2.3;
 			};
 			name = Release;
 		};
@@ -496,6 +505,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.bferrari.strogonoffTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 2.3;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/strogonoff.app/strogonoff";
 			};
 			name = Debug;
@@ -508,6 +518,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.bferrari.strogonoffTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 2.3;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/strogonoff.app/strogonoff";
 			};
 			name = Release;
@@ -519,6 +530,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.bferrari.strogonoffUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 2.3;
 				TEST_TARGET_NAME = strogonoff;
 			};
 			name = Debug;
@@ -530,6 +542,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.bferrari.strogonoffUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 2.3;
 				TEST_TARGET_NAME = strogonoff;
 			};
 			name = Release;

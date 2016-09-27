@@ -20,9 +20,6 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     var delegate:AddAMealDelegate?
     
     var items = Array<Item>()
-    let fileHandler = FileHandler()
-    
-    let archive = "\(Utils.getActiveUserPath())/strogonoff-items"
     
     override func viewDidLoad() {
         let newItemButton = UIBarButtonItem(title: "New Item",
@@ -31,13 +28,13 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
                                             action: #selector(ViewController.showNewItem))
         navigationItem.rightBarButtonItem = newItemButton
         
-        items = fileHandler.read(archive) as! Array
+        items = Dao().loadItems()
     }
     
     func addNew(item:Item) {
         items.append(item)
 
-        fileHandler.write(items, filePath: archive)
+        Dao().saveItems(items)
         if let tbView = tableView {
             tbView.reloadData()
         } else {

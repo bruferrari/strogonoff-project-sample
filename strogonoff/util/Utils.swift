@@ -10,12 +10,6 @@ import Foundation
 
 class Utils {
     
-    static func getActiveUserPath() -> String {
-        let userDirs = NSSearchPathForDirectoriesInDomains(
-            NSSearchPathDirectory.DocumentDirectory,
-            NSSearchPathDomainMask.UserDomainMask, true)
-        
-        return userDirs[0] as String
-    }
+    
     
 }

@@ -15,19 +15,13 @@ class MealsTableViewController: UITableViewController, AddAMealDelegate {
     
     func add(meal:Meal) {
         meals.append(meal)
-        let dir = Utils.getActiveUserPath()
-        let archive = "\(dir)/strognoff-meals"
-        
-        fileHandler.write(meals, filePath: archive)
+        Dao().saveMeals(meals)
         
         tableView.reloadData()
     }
     
     override func viewDidLoad() {
-        let dir = Utils.getActiveUserPath()
-        let archive = "\(dir)/strognoff-meals"
-
-        meals = fileHandler.read(archive) as! Array
+        meals = Dao().loadMeals()
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
